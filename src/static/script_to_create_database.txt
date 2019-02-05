@@ -1,0 +1,61 @@
+CREATE DATABASE IF NOT EXISTS my_shop;
+USE my_shop;
+
+CREATE TABLE users(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	login VARCHAR(200) NOT NULL,
+	email VARCHAR(300) DEFAULT NULL,
+	password VARCHAR(200) NOT NULL
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE account (
+	user_id INT NOT NULL,
+	current_money INT,
+	FOREIGN KEY (user_id) REFERENCES users(id)
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE roles(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	role VARCHAR(50) NOT NULL
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE user_roles(
+	user_id INT NOT NULL,
+	role_id INT NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES users (id),
+	FOREIGN KEY (role_id) REFERENCES roles (id),
+	UNIQUE (user_id, role_id)
+) DEFAULT CHARSET=utf8;
+
+INSERT INTO roles VALUES (1, 'ROLE_ADMIN');
+INSERT INTO roles VALUES (2, 'ROLE_USER');
+INSERT INTO roles VALUES (3, 'ROLE_BANNED');
+
+-- Use org.springframework.security.crypto.bcrypt.BCrypt
+-- $2a$12$dXaQUT2Zh6C3PYov6oJzm.OJWOowCanPZMZvNGP0eF0dltaK2hQ0a  -> password 0000 for admin.
+INSERT INTO users VALUES (1, 'admin', null, '$2a$12$dXaQUT2Zh6C3PYov6oJzm.OJWOowCanPZMZvNGP0eF0dltaK2hQ0a');
+
+INSERT INTO user_roles VALUES (1, 1);
+
+CREATE TABLE products(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(300) NOT NULL,
+    description VARCHAR(1000),
+    price INT NOT NULL
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE photos(
+	product_id INT NOT NULL,
+	body LONGBLOB NOT NULL,
+	FOREIGN KEY (product_id) REFERENCES products(id)
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE orders(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+	product_id INT NOT NULL,
+	order_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	pay_date DATETIME DEFAULT NULL,
+	FOREIGN KEY (user_id) REFERENCES users (id),
+	FOREIGN KEY (product_id) REFERENCES products (id)
+) DEFAULT CHARSET=utf8;

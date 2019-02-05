@@ -1,0 +1,94 @@
+body {
+    background-color: rgb(63, 60, 58);
+    color: whitesmoke;
+    margin: 1em;
+    padding: 0;
+}
+
+span.error {
+    color: darkred;
+    text-transform: uppercase;
+    font-family: Courier, sans-serif;
+    font-style: italic;
+}
+
+h1 {
+    color: whitesmoke;
+    font-size: 3em;
+}
+
+h2 {
+    color: whitesmoke;
+    font-size: 2em;
+}
+
+h3 {
+    color: whitesmoke;
+    font-size: 1.25em;
+}
+
+h4 {
+    color: whitesmoke;
+    font-size: .7em;
+}
+
+h5 {
+    color: whitesmoke;
+    font-size: .5em;
+}
+
+strong {
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+li {
+    color: whitesmoke;
+    font-style: italic;
+
+}
+
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+    background-color: rgb(63, 60, 58);
+
+}
+
+td {
+    vertical-align: middle;
+    padding: 10px;
+}
+
+button.button_reduced {
+    font-size: 90%;
+    font-weight: 700;
+    color: whitesmoke;
+    font-family: Courier;
+    padding: .5em 1em;
+    outline: none;
+    background: linear-gradient(rgb(76, 70, 66), rgb(153, 139, 130)) rgb(76, 70, 66);
+    box-shadow: 0 1px rgba(255, 255, 255, .2) inset,
+    0 3px 5px rgba(0, 1, 6, .5),
+    0 0 1px 1px rgba(0, 1, 6, .2);
+    transition: .2s ease-in-out;
+}
+
+button.button {
+    min-width: 180px;
+    min-height: 30px;
+    position: relative;
+    display: inline-block;
+    font-size: 90%;
+    font-weight: 700;
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
+    padding: .5em 1em;
+    outline: none;
+    background: linear-gradient(rgb(76, 70, 66), rgb(153, 139, 130)) rgb(76, 70, 66);
+    box-shadow: 0 1px rgba(255, 255, 255, .2) inset,
+    0 3px 5px rgba(0, 1, 6, .5),
+    0 0 1px 1px rgba(0, 1, 6, .2);
+    transition: .2s ease-in-out;
+}

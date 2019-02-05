@@ -1,0 +1,17 @@
+<div align="right"><font face="Courier">
+    <c:if test="${pageContext.request.remoteUser == null}">
+        <form action="/registration" method="get">
+            <button type="submit" class="button">Registration</button>
+        </form>
+        <sf:form action="/login" method="get">
+            <button type="submit" class="button">Log In</button>
+        </sf:form>
+
+    </c:if>
+    <c:if test="${pageContext.request.remoteUser != null}">
+        <h3><c:out value="${pageContext.request.remoteUser}"/></h3>
+        <sf:form action="/logout" method="post">
+            <button type="submit" class="button">Sign Out</button>
+        </sf:form>
+    </c:if></font>
+</div>
