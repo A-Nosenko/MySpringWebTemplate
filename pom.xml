@@ -12,7 +12,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.mvc>5.2.3.RELEASE</spring.mvc>
+        <spring.mvc>5.3.18</spring.mvc>
         <javax.servlet-api>4.0.1</javax.servlet-api>
         <jstl-api.version>1.2.2</jstl-api.version>
         <jstl.version>1.2</jstl.version>
