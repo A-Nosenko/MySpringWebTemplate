@@ -22,7 +22,7 @@
         <commons.validator>1.6</commons.validator>
         <commons-dbc.version>2.5.0</commons-dbc.version>
         <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
-        <hibernate-core.version>5.3.7.Final</hibernate-core.version>
+        <hibernate-core.version>5.3.20.Final</hibernate-core.version>
         <hibernate-entitymanager.version>5.3.7.Final</hibernate-entitymanager.version>
         <hibernate-validator.version>6.0.13.Final</hibernate-validator.version>
         <junit.version>4.12</junit.version>
